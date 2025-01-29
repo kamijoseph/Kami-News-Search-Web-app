@@ -30,12 +30,15 @@ function displayBlog(articles) {
         const truncatedTitle = article.title.length > 30 ? article.title.slice(0, 30) + "........." : article.title;
         title.textContent = truncatedTitle;
         const description = document.createElement("p");
-        const truncatedDes = article.description.length > 68 ? article.description.slice(0, 68) + "........" : article.description;
+        const truncatedDes = article.description.length > 120 ? article.description.slice(0, 120) + "........" : article.description;
         description.textContent = truncatedDes;
 
         blogCard.appendChild(img);
         blogCard.appendChild(title);
         blogCard.appendChild(description);
+        blogCard.addEventListener('click', ()=> {
+            window.open(article.url, "_blank");
+        })
         blogContainer.appendChild(blogCard);
     })
 }
