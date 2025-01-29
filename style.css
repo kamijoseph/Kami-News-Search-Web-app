@@ -10,6 +10,11 @@ body{
     position: relative;
 }
 
+.object-width{
+    max-width: 1200px;
+    margin: auto;
+}
+
 nav{
     background-color: #1B4D3E;
     box-shadow: 0 7px 10px rgba(0, 0, 0, .4);
