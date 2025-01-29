@@ -1,4 +1,6 @@
 
+// Fate Dynamic News Search Script
+// Using the new api
 import API_KEY from "./leen.js";
 
 const apiKey = API_KEY;
@@ -81,3 +83,5 @@ function displayBlog(articles) {
         console.error(`Error fetching News ${error}`);
     }
 })()
+
+// Projet Completed 2025
