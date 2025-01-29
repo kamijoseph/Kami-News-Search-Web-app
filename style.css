@@ -5,3 +5,46 @@
     font-family: "poppins", sans-serif;
     box-sizing: border-box;
 }
+
+body{
+    position: relative;
+}
+
+nav{
+    background-color: #1B4D3E;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, .4);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem;
+}
+
+.navbar .logo{
+    color: #F4D35E;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 2.2rem;
+}
+
+#search-input{
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+#search-button{
+    padding: 10px 20px;
+    background-color: #E76F51;
+    color: #Ffff;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
