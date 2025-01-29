@@ -3,17 +3,46 @@ import API_KEY from "./leen.js";
 
 const apiKey = API_KEY;
 const blogContainer = document.getElementById("blog-container");
+const searchField = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
 
 async function fetchRandomNews() {
     try{
         const apiUrl = `
-        https://newsapi.org/v2/top-headlines?country=us&pageSize=14&apikey=${apiKey}`;
+        https://newsapi.org/v2/top-headlines?country=us&pageSize=16&apikey=${apiKey}`;
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.articles
     }
     catch(error) {
-        console.error(`Error fetching News ${error}`);
+        console.log(`Error fetching News! ${error}`);
+    }
+    return []
+}
+
+searchButton.addEventListener('click', async ()=> {
+    const query = searchField.value.trim();
+    if (query !== "") {
+        try{
+            const articles = await fetchNewsQuery(query);
+            displayBlog(articles);
+        }
+        catch(error) {
+            console.log(`Error Fetching News! ${error}`);
+        }
+    }
+})
+
+async function fetchNewsQuery(query){
+    try{
+        const apiUrl = `
+        https://newsapi.org/v2/everything?q=${query}&pageSize=16&apikey=${apiKey}`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        return data.articles
+    }
+    catch(error) {
+        console.log(`Error fetching News! ${error}`);
     }
     return []
 }
